@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hash Table</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="intro">
+      <h1>Hash Table</h1>
+    </header>
+
+    <section class="lesson-card" aria-labelledby="data-title">
+      <div class="setup">
+        <div>
+          <p id="data-title" class="step-label">1. Input some data</p>
+          <label class="visually-hidden" for="data-input">
+            Data to put in the hash table
+          </label>
+          <input id="data-input" type="text">
+        </div>
+
+        <div>
+          <p class="step-label">2. Choose a hash method</p>
+          <label class="method-choice">
+            <input id="modulo-choice" type="radio" name="hash-method"
+              disabled>
+            <span>
+              <strong>Character-sum hash with modulo</strong>
+              <span class="method-help">
+                Add the character codes, then use <code>% 10</code> to find the
+                table space
+                <a class="ascii-link" href="https://www.asciitable.com/">
+                  ASCII Table
+                </a>
+              </span>
+            </span>
+          </label>
+        </div>
+
+        <div class="start-row">
+          <p class="step-label">3. Run</p>
+          <button id="start-button" class="start-button" type="button" disabled>
+            Run
+          </button>
+        </div>
+      </div>
+
+      <section class="demo" aria-labelledby="demo-title">
+        <div class="demo-heading">
+          <h2 id="demo-title" class="step-label demo-title">Watch it happen</h2>
+          <p id="animation-status" class="status" aria-live="polite">
+            Type some data to begin.
+          </p>
+        </div>
+
+        <div class="animation-steps" aria-live="polite">
+          <p id="step-message" class="animation-line">
+            Your data will appear in one of these spaces.
+          </p>
+        </div>
+        <div class="step-controls">
+          <p id="step-count" class="step-count">Use Run to begin</p>
+          <div class="arrow-controls">
+            <button id="previous-button" class="navigation-button" type="button"
+              aria-label="Previous step" disabled>←</button>
+            <button id="next-button" class="navigation-button" type="button"
+              aria-label="Next step" disabled>→</button>
+          </div>
+        </div>
+
+        <div class="hash-table" aria-label="Hash table with spaces numbered zero to nine">
+          <div class="hash-slot">
+            <span class="slot-number">0</span><span class="slot-content"></span>
+          </div>
+          <div class="hash-slot">
+            <span class="slot-number">1</span><span class="slot-content"></span>
+          </div>
+          <div class="hash-slot">
+            <span class="slot-number">2</span><span class="slot-content"></span>
+          </div>
+          <div class="hash-slot">
+            <span class="slot-number">3</span><span class="slot-content"></span>
+          </div>
+          <div class="hash-slot">
+            <span class="slot-number">4</span><span class="slot-content"></span>
+          </div>
+          <div class="hash-slot">
+            <span class="slot-number">5</span><span class="slot-content"></span>
+          </div>
+          <div class="hash-slot">
+            <span class="slot-number">6</span><span class="slot-content"></span>
+          </div>
+          <div class="hash-slot">
+            <span class="slot-number">7</span><span class="slot-content"></span>
+          </div>
+          <div class="hash-slot">
+            <span class="slot-number">8</span><span class="slot-content"></span>
+          </div>
+          <div class="hash-slot">
+            <span class="slot-number">9</span><span class="slot-content"></span>
+          </div>
+        </div>
+      </section>
+
+      <p id="modulo-explanation" class="footer-note" hidden>
+        The remainder after dividing by 10 is the table space number
+      </p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
